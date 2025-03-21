@@ -1,0 +1,98 @@
+\section{Gauge Invariance of the Mass Gap}
+
+We provide a mathematical proof that the mass gap is gauge-invariant in both 
+the lattice formulation and the continuum limit. This proof ensures that the 
+mass gap, defined as the lowest non-zero eigenvalue of the Hamiltonian or the 
+two-point correlation function, remains unchanged under gauge transformations.
+
+
+
+\section{Gauge Invariance in the Lattice Formulation}
+
+In lattice gauge theory, gauge fields are represented by link variables \(U_\mu(x) \in G\), where \(G\) is the gauge group (e.g., SU(N)), and are associated with the links between neighboring sites \(x\) and \(x + \hat{\mu}\).
+
+\subsection{Gauge Transformations on the Lattice}
+
+Under a gauge transformation \(\Omega(x) \in G\), the link variables transform as:
+\begin{equation}
+U_\mu(x) \rightarrow U_\mu'(x) = \Omega(x) U_\mu(x) \Omega^\dagger(x + \hat{\mu}).
+\end{equation}
+A scalar field \(\phi(x)\) transforms as:
+\begin{equation}
+\phi(x) \rightarrow \phi'(x) = \Omega(x) \phi(x).
+\end{equation}
+
+\subsection{Gauge-Invariant Observables}
+
+Physical observables on the lattice, such as Wilson loops or two-point correlation functions, must be constructed from gauge-invariant quantities. The two-point correlation function for a gauge-invariant scalar field is given by:
+\begin{equation}
+G(x, y) = \langle \phi^\dagger(x) \phi(y) \rangle.
+\end{equation}
+
+\subsection{Lattice Path Integral and Gauge Invariance}
+
+The path integral on the lattice is given by:
+\begin{equation}
+Z = \int \mathcal{D}U \, e^{-S[U]},
+\end{equation}
+where \(\mathcal{D}U\) is the Haar measure over the gauge group \(G\), and \(S[U]\) is the gauge-invariant action.
+
+Since the action \(S[U]\) is gauge-invariant, the measure \(\mathcal{D}U\) is gauge-invariant, and gauge transformations preserve the Haar measure, the path integral \(Z\) and expectation values of gauge-invariant observables are unchanged under gauge transformations:
+\begin{equation}
+\langle O[U] \rangle = \frac{1}{Z} \int \mathcal{D}U \, O[U] e^{-S[U]} = \frac{1}{Z} \int \mathcal{D}U' \, O[U'] e^{-S[U']} = \langle O[U'] \rangle.
+\end{equation}
+
+\subsection{Gauge Invariance of the Mass Gap on the Lattice}
+
+The mass gap \(m(a)\) on the lattice is extracted from the exponential decay of a gauge-invariant two-point correlation function \(G(x, y)\):
+\begin{equation}
+G(x, y) = \langle \phi^\dagger(x) \phi(y) \rangle \sim e^{-m(a) |x-y|}.
+\end{equation}
+
+Since \(G(x, y)\) is gauge-invariant, its functional form and the extracted mass gap \(m(a)\) are invariant under gauge transformations. Therefore, the mass gap is gauge-invariant in the lattice formulation.
+
+
+
+\section{Gauge Invariance in the Continuum Limit}
+
+In the continuum limit, the lattice spacing \(a \to 0\), and the theory is described by continuous gauge fields \(A_\mu(x)\). 
+
+\subsection{Continuum Limit and Renormalization}
+
+Gauge fields transform under local gauge transformations \(\Omega(x) \in G\) as:
+\begin{equation}
+A_\mu(x) \rightarrow A_\mu'(x) = \Omega(x) A_\mu(x) \Omega^\dagger(x) + \frac{i}{g} \Omega(x) \partial_\mu \Omega^\dagger(x).
+\end{equation}
+
+\subsection{Gauge Invariance of Continuum Correlation Functions}
+
+A gauge-invariant field strength tensor \(F_{\mu\nu}(x)\) is defined as:
+\begin{equation}
+F_{\mu\nu}(x) = \partial_\mu A_\nu(x) - \partial_\nu A_\mu(x) + i g [A_\mu(x), A_\nu(x)].
+\end{equation}
+
+The two-point correlation function for a gauge-invariant scalar field \(\phi(x)\) in the continuum is:
+\begin{equation}
+G_{\text{cont}}(x, y) = \langle \phi^\dagger(x) \phi(y) \rangle_{\text{cont}},
+\end{equation}
+where \(\phi(x) \rightarrow \Omega(x) \phi(x)\).
+
+Since the path integral measure \(\mathcal{D}A\) is gauge-invariant, and the action \(S[A]\) is gauge-invariant, the continuum correlation function \(G_{\text{cont}}(x, y)\) is also gauge-invariant:
+\begin{equation}
+\langle \phi^\dagger(x) \phi(y) \rangle_{\text{cont}} = \langle \phi'^\dagger(x) \phi'(y) \rangle_{\text{cont}}.
+\end{equation}
+
+\subsection{Gauge Invariance of the Continuum Mass Gap}
+
+The mass gap in the continuum theory, \(m_{\text{gap}}\), is defined as the lowest non-zero eigenvalue of the Hamiltonian or extracted from the exponential decay of the gauge-invariant two-point function:
+\begin{equation}
+G_{\text{cont}}(x, y) \sim e^{-m_{\text{gap}} |x-y|}.
+\end{equation}
+
+Since \(G_{\text{cont}}(x, y)\) is gauge-invariant, its functional form and the extracted mass gap \(m_{\text{gap}}\) are invariant under gauge transformations. Thus, the mass gap remains gauge-invariant in the continuum limit.
+
+
+
+\section{Implications}
+
+We have shown that the mass gap is gauge-invariant both in the lattice formulation and in the continuum limit. This proves that the mass gap is a gauge-invariant property of the theory in both the lattice and continuum formulations.

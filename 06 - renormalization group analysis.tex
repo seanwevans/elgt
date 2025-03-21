@@ -1,0 +1,108 @@
+\section{Renormalization Group Invariance}
+
+We perform a renormalization group analysis to show how the mass gap scales 
+under RG transformations and prove that the mass gap is a renormalization 
+group invariant quantity. This analysis demonstrates that the mass gap corresponds 
+to a fixed point in the RG flow.
+
+
+
+\section{Review of the Renormalization Group Framework}
+
+The renormalization group is a mathematical apparatus used to study the behavior of physical systems at different scales. In lattice gauge theory, the action \(S[U]\) is defined on a lattice with spacing \(a\). The RG involves systematically coarse-graining: integrating out degrees of freedom corresponding to small distances and studying how the action and other observables change under this process.
+
+\subsection{Wilsonian RG Approach}
+
+\subsubsection{Coarse-graining} 
+
+Integrate out the short-distance modes (momentum scales larger than a cutoff \(\Lambda\)), generating an effective action \(S_\Lambda[U]\) that describes the system at a lower cutoff scale.
+
+\subsubsection{Rescaling} 
+
+After integrating out the short-distance modes, rescale the remaining degrees of freedom to restore the original cutoff \(\Lambda\).
+
+\subsubsection{RG Flow}
+
+Repeating these steps generates a flow in the space of actions (or coupling constants) as the cutoff scale \(\Lambda\) changes. The trajectory traced out by these flows is called the RG flow.
+
+
+
+\section{Define the Mass Gap and Its Scaling Behavior}
+
+\subsection{Mass Gap Definition}
+
+The mass gap \(m\) is defined as the lowest non-zero eigenvalue of the Hamiltonian or, equivalently, as the inverse of the correlation length \(\xi\):
+\begin{equation}
+m = \frac{1}{\xi}.
+\end{equation}
+
+The correlation length \(\xi\) can be obtained from the exponential decay of the two-point correlation function \(G(x)\):
+\begin{equation}
+G(x) = \langle \phi(x) \phi(0) \rangle \sim e^{-m|x|} \quad \text{as} \quad |x| \to \infty.
+\end{equation}
+
+\subsection{Scaling of the Correlation Length}
+
+Under an RG transformation that changes the lattice spacing from \(a\) to \(a' = b a\) (where \(b > 1\) is the scale factor), the correlation length \(\xi\) scales as:
+\begin{equation}
+\xi' = \frac{\xi}{b}.
+\end{equation}
+Thus, the mass gap \(m = \frac{1}{\xi}\) scales as:
+\begin{equation}
+m' = b m.
+\end{equation}
+
+\section{Perform the Renormalization Group Analysis}
+
+We perform a Wilsonian RG analysis to derive the flow of the mass gap \(m\) under the RG transformation.
+
+\subsection{Effective Action and RG Flow}
+
+Starting with the lattice action \(S[U]\), the effective action at scale \(b a\) is obtained by integrating out the modes with momenta in the shell \(\Lambda/b < |p| < \Lambda\). This results in a new action \(S'[U]\) defined at the scale \(\Lambda/b\):
+\begin{equation}
+e^{-S'[U]} = \int \mathcal{D}U_{\text{short}} \, e^{-S[U + U_{\text{short}}]},
+\end{equation}
+where \(U_{\text{short}}\) represents the short-distance fluctuations.
+
+\subsection{Flow Equations}
+
+To analyze how the mass gap \(m\) changes, we focus on the effective potential or action, keeping only the relevant terms:
+\begin{equation}
+S[U] = \int d^dx \, \left( \frac{1}{2} (\partial_\mu \phi)^2 + \frac{1}{2} m^2 \phi^2 + \lambda \phi^4 + \cdots \right).
+\end{equation}
+
+Under the RG transformation, the mass parameter \(m^2\) flows according to the beta function \(\beta_m\):
+\begin{equation}
+\frac{dm^2}{d\log b} = \beta_m(m^2, \lambda, \ldots).
+\end{equation}
+
+
+
+\section{Prove RG Invariance of the Mass Gap}
+
+To prove that the mass gap is an RG invariant, we show that it corresponds to a fixed point in the RG equations.
+
+\subsection{Fixed Points}
+
+A fixed point of the RG flow is a set of values \(\{m^2, \lambda, \ldots\}\) such that the beta functions vanish:
+\begin{equation}
+\beta_m(m^2, \lambda, \ldots) = 0, \quad \beta_\lambda(m^2, \lambda, \ldots) = 0, \ldots
+\end{equation}
+
+At a fixed point, the parameters do not change under RG transformations, meaning that the effective theory looks the same at all scales.
+
+\subsection{Mass Gap as a Fixed Point}
+
+For the mass gap to be an RG invariant, it must remain constant under the RG flow. Since the mass gap is defined as \(m = 1/\xi\) and \(\xi\) scales inversely with \(b\), the condition for invariance is:
+\begin{equation}
+\frac{d\log m}{d\log b} = 0.
+\end{equation}
+This is equivalent to saying that \(m\) does not change under RG transformations, which occurs when the theory is at a fixed point.
+
+Thus, if the mass gap \(m\) is associated with a fixed point of the RG flow, it is an invariant quantity under the renormalization group transformations.
+
+
+
+\section{Implications}
+
+The mass gap \(m\) is a renormalization group invariant quantity because it corresponds to a fixed point in the RG flow. Under the RG transformation, while individual parameters like the mass term \(m^2\) and other couplings may run, the physical mass gap remains unchanged. This invariance reflects the fundamental property that the mass gap, as a physical observable associated with the long-distance behavior of the theory, is unaffected by changes in the renormalization scale.

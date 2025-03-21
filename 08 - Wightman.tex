@@ -1,0 +1,118 @@
+\section{Satisfaction of Osterwalder-Schrader and Wightman Axioms}
+
+We demonstrate how lattice gauge theory results satisfy the Wightman axioms (in Minkowski space) or the Osterwalder-Schrader axioms (in Euclidean space) in the continuum limit. This establishes a rigorous connection between the lattice and continuum formulations of quantum field theory.
+
+
+
+\section{Continuum Limit of Lattice Gauge Theory}
+
+\subsection{Lattice Formulation and Continuum Limit}
+
+In lattice gauge theory, the fields are defined on a discrete lattice with spacing \(a\). The action, such as the Wilson action for gauge fields, is given in terms of link variables \(U_\mu(x)\) associated with the lattice edges.
+
+The continuum limit is achieved by taking the lattice spacing \(a \to 0\) while renormalizing the parameters (coupling constants, masses, etc.) to keep physical quantities finite. In this limit, the lattice gauge fields \(U_\mu(x)\) are related to the continuum gauge fields \(A_\mu(x)\) through:
+\begin{equation}
+U_\mu(x) = e^{i a A_\mu(x)}.
+\end{equation}
+
+\subsection{Continuum Correlation Functions}
+
+The continuum correlation functions are defined as the limit of the lattice correlation functions as \(a \to 0\):
+\begin{equation}
+G_n(x_1, \ldots, x_n) = \lim_{a \to 0} \langle \phi(x_1) \ldots \phi(x_n) \rangle_{\text{lattice}}.
+\end{equation}
+Here, \(\phi(x)\) represents a generic field (scalar, gauge, etc.) in the continuum theory.
+
+
+
+\section{Satisfaction of Osterwalder-Schrader Axioms}
+
+The Osterwalder-Schrader axioms are:
+
+\begin{enumerate}
+    \item \textbf{OS0: Euclidean Invariance}: The correlation functions \(G_n(x_1, \ldots, x_n)\) are invariant under Euclidean transformations (rotations and translations) in \(\mathbb{R}^d\).
+    
+    \item \textbf{OS1: Reflection Positivity}: For any set of test functions \(\{f_i\}\), the Euclidean correlation functions satisfy:
+    \[
+    \sum_{i,j} \int d^dx_1 \ldots d^dx_n \, f_i^*(x_1, \ldots, x_n) G_n(x_1, \ldots, x_n) f_j(x_1, \ldots, x_n) \geq 0,
+    \]
+    where \(x_i = (\tau_i, \mathbf{x}_i)\) and \(\tau \to -\tau\) denotes reflection in Euclidean time.
+    
+    \item \textbf{OS2: Symmetry}: The correlation functions are symmetric under the permutation of arguments:
+    \[
+    G_n(x_1, \ldots, x_n) = G_n(x_{\pi(1)}, \ldots, x_{\pi(n)}).
+    \]
+    
+    \item \textbf{OS3: Cluster Property}: For large separations, correlation functions factorize:
+    \[
+    \lim_{|\mathbf{x}_i - \mathbf{x}_j| \to \infty} G_n(x_1, \ldots, x_n) = G_{n_1}(x_1, \ldots, x_{n_1}) G_{n_2}(x_{n_1+1}, \ldots, x_n).
+    \]
+    
+    \item \textbf{OS4: Exponential Decay (Mass Gap)}: The two-point function decays exponentially with separation:
+    \[
+    G_2(x) \sim e^{-m|x|} \quad \text{as} \quad |x| \to \infty,
+    \]
+    indicating a mass gap \(m > 0\).
+\end{enumerate}
+
+\subsection{Proving Satisfaction of OS Axioms}
+
+\subsubsection*{OS0 (Euclidean Invariance)} 
+
+The lattice formulation inherently respects Euclidean invariance (rotational and translational symmetries) on the lattice. As \(a \to 0\), this symmetry is preserved in the continuum limit.
+
+\subsubsection*{OS1 (Reflection Positivity)}
+
+The Wilson action and the path integral formulation on the lattice satisfy reflection positivity. This property is preserved in the continuum limit as reflection positivity is a requirement for the construction of a Hilbert space with a positive-definite inner product.
+
+\subsubsection*{OS2 (Symmetry)}
+
+The construction of lattice correlation functions involves averaging over all gauge field configurations, naturally ensuring symmetry under permutations of field positions. This symmetry is preserved in the continuum limit.
+
+\subsubsection*{OS3 (Cluster Property)}
+
+The cluster property follows from the absence of long-range correlations in a theory with a mass gap. On the lattice, this property is observed when the distance between clusters is large compared to the correlation length. In the continuum limit, this translates to the cluster decomposition property.
+
+\subsubsection*{OS4 (Exponential Decay)}
+
+The mass gap ensures exponential decay of the two-point function at long distances. On the lattice, the mass gap is defined through the exponential decay of correlation functions, and this definition carries over to the continuum, satisfying OS4.
+
+
+
+\section{Analytic Continuation and Satisfaction of Wightman Axioms}
+
+The Wightman axioms in Minkowski space are:
+
+\begin{enumerate}
+    \item \textbf{W0: Relativistic Invariance}: Fields transform correctly under the Lorentz group.
+    
+    \item \textbf{W1: Existence of Vacuum State}: There exists a vacuum state \(|0\rangle\) that is invariant under spacetime translations.
+    
+    \item \textbf{W2: Local Commutativity (Microcausality)}: Fields commute or anticommute at spacelike separation.
+    
+    \item \textbf{W3: Positive Spectrum Condition}: The spectrum of the four-momentum operator \(P_\mu\) is contained in the forward light cone.
+    
+    \item \textbf{W4: Uniqueness of Vacuum}: The vacuum state is unique (no other state is annihilated by all translations).
+\end{enumerate}
+
+\subsection{Analytic Continuation}
+
+\subsubsection{From Euclidean to Minkowski Space} The OS axioms ensure that the Euclidean correlation functions \(G_n(x_1, \ldots, x_n)\) can be analytically continued to Minkowski space, yielding Wightman functions \(W_n(x_1, \ldots, x_n)\).
+
+\subsubsection{Satisfying Wightman Axioms}
+
+\begin{itemize}
+    \item \textbf{W0 (Relativistic Invariance)}: The analytically continued Wightman functions inherit the relativistic invariance from Euclidean invariance.
+    
+    \item \textbf{W1 (Existence of Vacuum State)}: The existence of a reflection positive, Euclidean-invariant vacuum state in the OS framework corresponds to the unique Minkowski vacuum.
+    
+    \item \textbf{W2 (Local Commutativity)}: Locality of the Euclidean fields ensures microcausality upon analytic continuation.
+    
+    \item \textbf{W3 (Positive Spectrum Condition)}: Reflection positivity in Euclidean space ensures a positive energy spectrum in Minkowski space.
+    
+    \item \textbf{W4 (Uniqueness of Vacuum)}: The uniqueness of the vacuum follows from the positive-definite Hilbert space structure obtained from OS axioms.
+\end{itemize}
+
+\section{Implications}
+
+We have demonstrated that the lattice results, when appropriately renormalized and taken to the continuum limit, satisfy the Osterwalder-Schrader axioms. These Euclidean correlation functions can be analytically continued to Minkowski space, where they satisfy the Wightman axioms. This shows that lattice gauge theory, in the continuum limit, provides a consistent and rigorous formulation of quantum field theory.

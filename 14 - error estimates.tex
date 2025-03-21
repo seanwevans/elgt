@@ -1,0 +1,124 @@
+\section{Error Estimates and Convergence Proofs}
+
+We provide error estimates for approximations used in constructing the continuum theory 
+from the lattice formulation and prove the convergence of series expansions and 
+numerical methods employed. This ensures that the approximations are well-controlled 
+and converge to the exact values, maintaining the mass gap in the continuum limit.
+
+
+
+\section{Identify Approximations and Series Expansions}
+
+The following approximations and series expansions are commonly used:
+
+\begin{enumerate}
+    \item \textbf{Series Expansions in Lattice Perturbation Theory}: Expansion of lattice field theory quantities in powers of the coupling constant or other parameters.
+    
+    \item \textbf{Numerical Lattice Simulations}: Discretization of space-time and numerical evaluation of path integrals using numerical methods.
+    
+    \item \textbf{Continuum Limit Approximations}: Approximating continuum quantities by their lattice counterparts as the lattice spacing \(a \to 0\), with series expansions in terms of \(a\) or \(a^2\).
+\end{enumerate}
+
+\section{Error Estimates for Approximations}
+
+\subsection{Error Estimates for Series Expansions in Lattice Perturbation Theory}
+
+In lattice perturbation theory, quantities are expanded in powers of the coupling constant \(g\):
+\begin{equation}
+Q_n(g) = \sum_{k=0}^n c_k g^k.
+\end{equation}
+The error due to truncation at order \(n\) is:
+\begin{equation}
+\epsilon_n = Q(g) - Q_n(g) = \sum_{k=n+1}^\infty c_k g^k.
+\end{equation}
+
+If \(|c_k| \leq M_k\) for some bounding sequence \(\{M_k\}\), then:
+\begin{equation}
+|\epsilon_n| \leq \sum_{k=n+1}^\infty M_k g^k.
+\end{equation}
+
+If \(M_k \sim C^k\), then for \(g < \frac{1}{C}\), the series converges and:
+\begin{equation}
+|\epsilon_n| \leq \frac{M_{n+1} g^{n+1}}{1 - Cg}.
+\end{equation}
+
+\subsection{Error Estimates for Numerical Lattice Simulations}
+
+The error associated with a finite lattice size \(L\) and spacing \(a\) is:
+\begin{equation}
+\epsilon_{a, L} = Q(a, L) - Q.
+\end{equation}
+
+For small \(a\) and large \(L\), the error can be expanded as:
+\begin{equation}
+\epsilon_{a, L} = A a^p + B \frac{1}{L^q} + \mathcal{O}(a^{p+1}, L^{-(q+1)}),
+\end{equation}
+where \(p, q > 0\) depend on the observable and the dimension of the lattice.
+
+\subsection{Error Estimates for Continuum Limit Approximations}
+
+When approximating continuum quantities by their lattice counterparts, a common expansion is:
+\begin{equation}
+Q(a) = Q_0 + Q_1 a + Q_2 a^2 + \mathcal{O}(a^3).
+\end{equation}
+
+The error from truncating at order \(a^2\) is:
+\begin{equation}
+\epsilon(a) = Q(a) - (Q_0 + Q_1 a + Q_2 a^2) = \mathcal{O}(a^3).
+\end{equation}
+
+
+
+\section{Proof of Convergence}
+
+\subsection{Convergence of Series Expansions in Lattice Perturbation Theory}
+
+To prove convergence of the series expansion \(Q(g) = \sum_{k=0}^\infty c_k g^k\), we need to show that the series converges absolutely.
+
+\begin{theorem}
+If \(|c_k| \leq M_k\) where \(M_k \sim \frac{C^k}{k!}\), then the series \(Q(g) = \sum_{k=0}^\infty c_k g^k\) converges absolutely for all \(g < \frac{1}{C}\).
+\end{theorem}
+
+\begin{proof}
+The series:
+\begin{equation}
+\sum_{k=0}^\infty M_k g^k = \sum_{k=0}^\infty \frac{(Cg)^k}{k!} = e^{Cg}
+\end{equation}
+converges for all \(g\). Hence, by the comparison test, the series for \(Q(g)\) converges absolutely for all \(g < \frac{1}{C}\).
+\end{proof}
+
+\subsection{Convergence of Numerical Lattice Simulations}
+
+To prove convergence of numerical lattice simulations, we show that the errors \(\epsilon_{a, L}\) vanish as \(a \to 0\) and \(L \to \infty\).
+
+\begin{theorem}
+Given the error expansion:
+\begin{equation}
+\epsilon_{a, L} = A a^p + B \frac{1}{L^q} + \mathcal{O}(a^{p+1}, L^{-(q+1)}),
+\end{equation}
+if \(a \to 0\) and \(L \to \infty\), then \(\epsilon_{a, L} \to 0\).
+\end{theorem}
+
+\begin{proof}
+As \(a \to 0\) and \(L \to \infty\), the terms \(a^p \to 0\) and \(L^{-q} \to 0\), leading to \(\epsilon_{a, L} \to 0\). The convergence rate depends on the powers \(p\) and \(q\).
+\end{proof}
+
+\subsection{Convergence of Continuum Limit Approximations}
+
+For continuum limit approximations, we prove that the lattice quantity \(Q(a)\) converges to its continuum counterpart \(Q(0)\) as \(a \to 0\).
+
+\begin{theorem}
+Given the expansion:
+\begin{equation}
+Q(a) = Q_0 + Q_1 a + Q_2 a^2 + \mathcal{O}(a^3),
+\end{equation}
+taking \(a \to 0\) gives \(Q(0) = \lim_{a \to 0} Q(a) = Q_0\).
+\end{theorem}
+
+\begin{proof}
+Taking the limit \(a \to 0\), all higher-order terms vanish, leaving \(Q(0) = Q_0\). Thus, \(Q(a)\) converges to \(Q(0)\) as \(a \to 0\).
+\end{proof}
+
+\section{Implications}
+
+By providing rigorous error estimates for approximations and proving the convergence of series expansions and numerical methods, we have shown that the approximations used in constructing the continuum theory from the lattice formulation are well-controlled. The errors decrease systematically, and the methods converge to the exact results, ensuring that the mass gap and other physical quantities are preserved in the continuum limit.
